@@ -30,11 +30,10 @@ $link-hover-color: #55a5db;
     height: 30px;
 }
 
-.trendingRecipes {
+.trendingRecipes {border:1px solid red;
     margin-top: 15px;
     width: 300px;
     height: 600px;
-    float: right;
     overflow: hidden;
     position: relative;
 
@@ -56,6 +55,7 @@ $link-hover-color: #55a5db;
         overflow: hidden;
         height: $item-count * 161 + px;
         z-index: 999;
+        padding: 0;
         /*@include breakpoint(handheldSmall){		//   TODO:change breakpoint to non-deprecated
 			height:$item-count * 70 + px;
 	}*/
@@ -74,7 +74,7 @@ $link-hover-color: #55a5db;
         overflow: hidden;
         margin-bottom: $gutter;
         //   Animation Controls
-        -webkit-transition: opacity 0.2s ease-out;
+      /*  -webkit-transition: opacity 0.2s ease-out;
         -moz-transition: opacity 0.2s ease-out;
         -ms-transition: opacity 0.2s ease-out;
         -o-transition: opacity 0.2s ease-out;
@@ -83,7 +83,7 @@ $link-hover-color: #55a5db;
         -moz-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
         -ms-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
         -o-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
-        animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
+        animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;*/
     }
 
     &__nav--down {
@@ -181,7 +181,7 @@ $link-hover-color: #55a5db;
 
 // ANIMATION KEYS
 
-@-webkit-keyframes moveSlideshowUp {
+/*@-webkit-keyframes moveSlideshowUp {
     0% {
         top: 0;
         opacity: 1;
@@ -247,7 +247,7 @@ $link-hover-color: #55a5db;
         top: 0;
         opacity: 1;
     }
-}
+}*/
 
 .smallStar {
     background-image: url(http://ukcdn.ar-cdn.com/global/spriteGlobal.svg?v=903) no-repeat;

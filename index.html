@@ -3,65 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Title</title>
-  <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="stylesheet" href="css/grunt-project.css">
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="css/recipe-ticker.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
 </head>
-<body>
-        <div class="trendingRecipes" ng-controller="recipeAppController" id="trendingRecipes" ngcloak>
-            <h3>Trending Recipes... Boo Ya!</h3>
-            <a href="#" id="up" class="trendingRecipes__nav--up"></a>
-            <a href="#" id="down" class="trendingRecipes__nav--down"></a>
-            <ul>
-                <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
-                    <div class="trendingRecipes__photo">
-                        <a ng-href="">
-                            <img src="http://ukcdn.ar-cdn.com/recipes/xlarge/96670036-7fb9-48a1-813b-c5871cd2c8f2.jpg" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
-                        </a>
-                    </div>
-                    <div class="trendingRecipes__recipeInfo">
-                        <h4><a ng-href="{{recipe.URL}}">Hey there ksdjflksdjfklsd skldjfklsd</a></h4>
-                        <div class="smallStar rating2"></div>
-
-                    </div>
-
-                </li>
-
-                <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
-                    <div class="trendingRecipes__photo">
-                        <a ng-href="">
-                            <img src="http://ukcdn.ar-cdn.com/recipes/xlarge/96670036-7fb9-48a1-813b-c5871cd2c8f2.jpg" ng-src="{{recipe.ImageURL}}" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
-                        </a>
-                    </div>
-                    <div class="trendingRecipes__recipeInfo">
-                        <h4><a ng-href="{{recipe.URL}}">Hey there ksdjflksdjfklsd skldjfklsd</a></h4>
-                        <div class="smallStar rating2"></div>
-
-                    </div>
-
-                </li>
-
-                <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
-                    <div class="trendingRecipes__photo">
-                        <a ng-href="">
-                            <img src="http://ukcdn.ar-cdn.com/recipes/xlarge/96670036-7fb9-48a1-813b-c5871cd2c8f2.jpg" ng-src="{{recipe.ImageURL}}" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
-                        </a>
-                    </div>
-                    <div class="trendingRecipes__recipeInfo">
-                        <h4><a ng-href="{{recipe.URL}}">Hey there ksdjflksdjfklsd skldjfklsd</a></h4>
-                        <div class="smallStar rating2"></div>
-
-                    </div>
-
-                </li>
-
-            </ul>
-        </div>
-        <!-- <div class="trendingRecipes" ng-controller="recipeAppController" id="trendingRecipes" ngcloak>
-           <h3>Trending Recipes... Boo Ya!</h3>
+<body ng-app="recipes">
+        
+         <div class="trendingRecipes" ng-controller="recipeDataController" id="trendingRecipes">
+           <h3>{{recipe.recipeName}}</h3>
            <a href="#" id="up" class="trendingRecipes__nav--up"></a>
            <a href="#" id="down" class="trendingRecipes__nav--down"></a>
            <ul>
@@ -72,21 +21,32 @@
                  </a>
                </div>
                <div class="trendingRecipes__recipeInfo" ng-hide="recipe.SponsorName">
-                 <h4><a ng-href="{{recipe.URL}}">{{recipe.Title}}</a></h4>
+                 <h4><a ng-href="{{recipe.URL}}">{{recipe.recipeName}}</a></h4>
                  <div class="smallStar rating{{recipe.AverageRating}}"></div>
                  <small>{{recipe.SourceCountry}}</small>
                </div>
-               <div class="trendingRecipes__sponsorship" ng-show="recipe.SponsorName">
-                 <h4><a ng-href="{{recipe.URL}}">{{recipe.Title}}</a></h4>
-                 <a ng-href="{{recipe.SponsorURL}}">
-                   <img ng-src="{{recipe.SponsorImageURL}}" ng-alt="{{recipe.SponsorName}}">
-                 </a>
-                 <small>{{recipe.SourceCountry}}</small>
-                 <small>Sponsored By</small>
-               </div>
+              
              </li>
            </ul>
-         </div>-->
-        <script src="js/grunt-project.min.js"></script>
+         </div>
+        <!--<script src="js/grunt-project.min.js"></script>-->
+        <script>
+        <!-- TODO: Move to perment location -->
+          var app = angular.module("recipes", []);
+
+          app.controller('recipeDataController', 
+          function($scope, $http) {
+            $http.get('data.json')
+            .success(function(data, status, headers, config){
+                $scope.trendingrecipes = data;
+            })
+            .error(function(data){
+                console.log('Error');
+            });    
+          
+          });
+
+
+        </script>
     </body>
 </html>
