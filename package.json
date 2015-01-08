@@ -1,16 +1,10 @@
 {
-  "name": "grunt-project",
-  "title": "A simple Grunt project",
+  "name": "recipe-ticker",
+  "title": "Recipe Ticker",
   "description": "A basic Grunt project to get started.",
   "version": "0.1.0",
-  "homepage": "http://markgoodyear.com",
   "author": {
-    "name": "Mark Goodyear",
-    "url": "http://markgoodyear.com"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=0.10.3"
+    "name": "Amber Harmon"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

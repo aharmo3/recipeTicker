@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -11,19 +11,82 @@
   <![endif]-->
 </head>
 <body>
-  <h1>Heading 1</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, obcaecati, numquam dolores ut aliquam dolorum eaque nulla quidem inventore tempore eos maiores error optio autem reiciendis enim dicta harum odit</p>
-  <h2>Heading 2</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, obcaecati, numquam dolores ut aliquam dolorum eaque nulla quidem inventore tempore eos maiores error optio autem reiciendis enim dicta harum odit?</p>
-  <h3>Heading 3</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, obcaecati, numquam dolores ut aliquam dolorum eaque nulla quidem inventore tempore eos maiores error optio autem reiciendis enim dicta harum odit?</p>
-  <h4>Heading 4</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, obcaecati, numquam dolores ut aliquam dolorum eaque nulla quidem inventore tempore eos maiores error optio autem reiciendis enim dicta harum odit?</p>
-  <h5>Heading 5</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, obcaecati, numquam dolores ut aliquam dolorum eaque nulla quidem inventore tempore eos maiores error optio autem reiciendis enim dicta harum odit?</p>
-  <h6>Heading 6</h6>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, obcaecati, numquam dolores ut aliquam dolorum eaque nulla quidem inventore tempore eos maiores error optio autem reiciendis enim dicta harum odit?</p>
+        <div class="trendingRecipes" ng-controller="recipeAppController" id="trendingRecipes" ngcloak>
+            <h3>Trending Recipes... Boo Ya!</h3>
+            <a href="#" id="up" class="trendingRecipes__nav--up"></a>
+            <a href="#" id="down" class="trendingRecipes__nav--down"></a>
+            <ul>
+                <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
+                    <div class="trendingRecipes__photo">
+                        <a ng-href="">
+                            <img src="http://ukcdn.ar-cdn.com/recipes/xlarge/96670036-7fb9-48a1-813b-c5871cd2c8f2.jpg" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
+                        </a>
+                    </div>
+                    <div class="trendingRecipes__recipeInfo">
+                        <h4><a ng-href="{{recipe.URL}}">Hey there ksdjflksdjfklsd skldjfklsd</a></h4>
+                        <div class="smallStar rating2"></div>
 
-  <script src="js/grunt-project.min.js"></script>
-</body>
+                    </div>
+
+                </li>
+
+                <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
+                    <div class="trendingRecipes__photo">
+                        <a ng-href="">
+                            <img src="http://ukcdn.ar-cdn.com/recipes/xlarge/96670036-7fb9-48a1-813b-c5871cd2c8f2.jpg" ng-src="{{recipe.ImageURL}}" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
+                        </a>
+                    </div>
+                    <div class="trendingRecipes__recipeInfo">
+                        <h4><a ng-href="{{recipe.URL}}">Hey there ksdjflksdjfklsd skldjfklsd</a></h4>
+                        <div class="smallStar rating2"></div>
+
+                    </div>
+
+                </li>
+
+                <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
+                    <div class="trendingRecipes__photo">
+                        <a ng-href="">
+                            <img src="http://ukcdn.ar-cdn.com/recipes/xlarge/96670036-7fb9-48a1-813b-c5871cd2c8f2.jpg" ng-src="{{recipe.ImageURL}}" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
+                        </a>
+                    </div>
+                    <div class="trendingRecipes__recipeInfo">
+                        <h4><a ng-href="{{recipe.URL}}">Hey there ksdjflksdjfklsd skldjfklsd</a></h4>
+                        <div class="smallStar rating2"></div>
+
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+        <!-- <div class="trendingRecipes" ng-controller="recipeAppController" id="trendingRecipes" ngcloak>
+           <h3>Trending Recipes... Boo Ya!</h3>
+           <a href="#" id="up" class="trendingRecipes__nav--up"></a>
+           <a href="#" id="down" class="trendingRecipes__nav--down"></a>
+           <ul>
+             <li class="trendingRecipes__singleRecipe js-soloRecipe" ng-repeat="recipe in trendingrecipes">
+               <div class="trendingRecipes__photo">
+                 <a ng-href="{{recipe.URL}}">
+                   <img ng-src="{{recipe.ImageURL}}" ng-alt="{{recipe.Title}}" title="{{recipe.Title}}">
+                 </a>
+               </div>
+               <div class="trendingRecipes__recipeInfo" ng-hide="recipe.SponsorName">
+                 <h4><a ng-href="{{recipe.URL}}">{{recipe.Title}}</a></h4>
+                 <div class="smallStar rating{{recipe.AverageRating}}"></div>
+                 <small>{{recipe.SourceCountry}}</small>
+               </div>
+               <div class="trendingRecipes__sponsorship" ng-show="recipe.SponsorName">
+                 <h4><a ng-href="{{recipe.URL}}">{{recipe.Title}}</a></h4>
+                 <a ng-href="{{recipe.SponsorURL}}">
+                   <img ng-src="{{recipe.SponsorImageURL}}" ng-alt="{{recipe.SponsorName}}">
+                 </a>
+                 <small>{{recipe.SourceCountry}}</small>
+                 <small>Sponsored By</small>
+               </div>
+             </li>
+           </ul>
+         </div>-->
+        <script src="js/grunt-project.min.js"></script>
+    </body>
 </html>

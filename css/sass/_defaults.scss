@@ -1,63 +1,38 @@
-//--------------------------------------*\
-//  Defaults
-//--------------------------------------*/
+$mineshaft1: #ededed !default; //extra light gray
+$mineshaft2: #c6c6c6 !default; //light gray
+$mineshaft3: #7F7F7F !default; //gray
+$mineshaft4: #454545 !default; //dark gray
 
-// Use Sass comments for this file to prevent output to top of
-// development compiled .css
+// <!-- Background color for `<body>`. -->
+$body-bg: #fafafa !default;
+// <!-- Global text color on `<body>`. -->
+$text-color: $mineshaft4 !default;
 
+// <!-- Global text link color. -->
+$link-color: $mineshaft4 !default;
 
-//--------------------------------------*\
-// Colors
-//--------------------------------------*/
+// <!-- Link hover color -->
+$link-hover-color: #55a5db !default;
 
-// Brand colours
-$brand-primary:   #111111;
-$brand-secondary: #222222;
-$brand-tertiary:  #333333;
+/* <!-- Typography
+Font, line-height, and color for body text, headings, and more. --> */
 
-// Grays
-$gray-light:      #eeeeee;
-$gray-med:        #aaaaaa;
-$gray-dark:       #cccccc;
+$font-family-sans-serif: 'Open Sans', Arial, sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
 
-// Black & white
-$black:           #000;
-$white:           #fff;
+$font-size-base: 0.875 !default; //~14px
+$font-size-large: 1 !default; //~16px
+$font-size-small: 0.857 !default; //~12px
 
-
-//--------------------------------------*\
-// Base Type
-//--------------------------------------*/
-
-// Define font stacks
-$primary-font:    "Helvetica Neue", Helvetica, Arial, sans-serif;
-$secondary-font:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-// Base font sizes
-$base-font-size:    16px!default;
-$base-line-height:  24px!default;
-
-// Big sizes
-$giga-size:         96px!default;
-$mega-size:         72px!default;
-$kilo-size:         48px!default;
-
-// Heading sizes
-$h1-size:           36px!default; // .alpha
-$h2-size:           30px!default; // .beta
-$h3-size:           24px!default; // .gamma
-$h4-size:           20px!default; // .delta
-$h5-size:           16px!default; // .epsilon
-$h6-size:           14px!default; // .zeta
-
-// Small sizes
-$milli-size:        12px!default;
-$micro-size:        10px!default;
-
-
-//--------------------------------------*\
-// Project Globals
-//--------------------------------------*/
-
-// Border radius
-$global-radius:     6px;
+$font-size-h1: 1.625 !default; //~26px
+$line-height-h1: 1.75 !default; //~28px
+$font-size-h2: 1.3125 !default; //~21px
+$line-height-h2: 1.437 !default; //~23px
+$font-size-h3: 1.125 !default; //~18px
+$line-height-h3: 1.25 !default; //~20px
+$font-size-h4: 1 !default; //~16px
+$line-height-h4: 1.125 !default; //~18px
+$font-size-h5: 0.875 !default; //~14px
+$line-height-h5: 1 !default; //~16px
+$font-size-h6: 0.857 !default; //~12px
+$line-height-h6: 0.875 !default; //~14px

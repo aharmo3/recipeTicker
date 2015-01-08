@@ -2,27 +2,59 @@
   Type
 \*--------------------------------------*/
 
-// Headings
+h1, .alpha,
+h2, .beta,
+h3, .gamma,
+h4, .delta,
+h5, .epsilon,
+h6, .zeta {
+    margin: 0 0 0.3em;
+    margin: 0 0 0.3rem;
+
+    small {
+        font-weight: normal;
+        font-size: smaller;
+    }
+}
+
 h1, .alpha {
-  font-size: $h1-size;
+    font-size: $font-size-h1+em;
+    font-size: $font-size-h1+rem;
+    line-height: $line-height-h1+em;
+    line-height: $line-height-h1+rem;
 }
 
 h2, .beta {
-  font-size: $h2-size;
+    font-size: $font-size-h2+em;
+    font-size: $font-size-h2+rem;
+    line-height: $line-height-h2+em;
+    line-height: $line-height-h2+rem;
 }
 
 h3, .gamma {
-  font-size: $h3-size;
+    font-size: $font-size-h3+em;
+    font-size: $font-size-h3+rem;
+    line-height: $line-height-h3+em;
+    line-height: $line-height-h3+rem;
 }
 
 h4, .delta {
-  font-size: $h4-size;
+    font-size: $font-size-h4+em;
+    font-size: $font-size-h4+rem;
+    line-height: $line-height-h4+em;
+    line-height: $line-height-h4+rem;
 }
 
 h5, .epsilon {
-  font-size: $h5-size;
+    font-size: $font-size-h5+em;
+    font-size: $font-size-h5+rem;
+    line-height: $line-height-h5+em;
+    line-height: $line-height-h5+rem;
 }
 
 h6, .zeta {
-  font-size: $h6-size;
+    font-size: $font-size-h6+em;
+    font-size: $font-size-h6+rem;
+    line-height: $line-height-h6+em;
+    line-height: $line-height-h6+rem;
 }

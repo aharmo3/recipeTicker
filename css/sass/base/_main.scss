@@ -3,6 +3,301 @@
 \*--------------------------------------*/
 
 html {
-	overflow-y: scroll;
-	min-height: 100%;
+    overflow-y: scroll;
+    min-height: 100%;
 }
+
+//   BEGIN TRENDING RECIPES
+
+$item-count: 15;
+$text-color: #454545;
+$gutter: 10px;
+
+// <!-- cache-buster for background images -->
+$bgvar: '?v=' + random(1000);
+$link-color: #fff;
+$link-hover-color: #55a5db;
+
+.overlay {
+    background-color: rgba(0,0,0,0.5);
+}
+
+%trendingRecipes__nav {
+    background-image: url(../global/tickerArrows.png#{$bgvar});
+    background-repeat: no-repeat;
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.trendingRecipes {
+    margin-top: 15px;
+    width: 300px;
+    height: 600px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+
+    H3 { //   Remove with typography unification
+        font-weight: 600 !important;
+        font-size: 16px;
+        color: $text-color !important;
+        font-style: normal !important;
+    }
+
+    IMG {
+        position: absolute;
+        top: -63%;
+        width: 300px;
+    }
+
+    UL {
+        position: relative;
+        overflow: hidden;
+        height: $item-count * 161 + px;
+        z-index: 999;
+        /*@include breakpoint(handheldSmall){		//   TODO:change breakpoint to non-deprecated
+			height:$item-count * 70 + px;
+	}*/
+        &:hover LI {
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            -ms-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+    }
+
+    LI {
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: $gutter;
+        //   Animation Controls
+        -webkit-transition: opacity 0.2s ease-out;
+        -moz-transition: opacity 0.2s ease-out;
+        -ms-transition: opacity 0.2s ease-out;
+        -o-transition: opacity 0.2s ease-out;
+        transition: opacity 0.2s ease-out;
+        -webkit-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
+        -moz-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
+        -ms-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
+        -o-animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
+        animation: moveSlideshowUp ($item-count * 2 + s) linear infinite normal;
+    }
+
+    &__nav--down {
+        display: none;
+        @extend %trendingRecipes__nav;
+        background-position: -14px -43px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        &:hover {
+            background-position: -49px -43px;
+
+            ~ ul LI {
+                -webkit-animation-direction: alternate;
+                -moz-animation-direction: alternate;
+                -ms-animation-direction: alternate;
+                -o-animation-direction: alternate;
+                animation-direction: alternate;
+            }
+        }
+    }
+
+    &__nav--up {
+        display: none;
+        @extend %trendingRecipes__nav;
+        background-position: -14px -7px;
+
+        &:hover {
+            background-position: -49px -7px;
+
+            ~ ul LI {
+                -webkit-animation-duration: 5s;
+                -moz-animation-duration: 5s;
+                -ms-animation-duration: 5s;
+                -o-animation-duration: 5s;
+                animation-duration: 5s;
+            }
+        }
+    }
+
+    &__photo {
+        width: 300px;
+        height: 150px;
+        position: relative;
+
+        IMG {
+            position: absolute;
+            top: -63%;
+            width: 300px;
+        }
+    }
+
+    &__recipeInfo, &__sponsorship {
+        @extend .overlay;
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        width: 100%;
+        padding: $gutter;
+
+        IMG {
+            width: 17%;
+            float: right;
+            margin-left: 10px;
+        }
+
+        H4 { //   Remove with typography unification
+            margin-top: 0 !important;
+            margin-bottom: 5px;
+        }
+
+        A {
+            color: #fff;
+
+            &:hover {
+                color: $link-hover-color;
+            }
+            //   For sponsor by area
+            & + SMALL {
+                margin-top: 5px;
+            }
+        }
+
+        SMALL {
+            float: left;
+            margin-top: 5px;
+
+            & + SMALL {
+                float: right;
+            }
+        }
+    }
+}
+
+// ANIMATION KEYS
+
+@-webkit-keyframes moveSlideshowUp {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    98% {
+        top: -($item-count * 161 + px);
+        opacity: 1;
+    }
+
+    100% {
+        top: -($item-count * 161 + px);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes moveSlideshowUp {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+
+    98% {
+        top: -($item-count * 161 + px);
+        opacity: 1;
+    }
+
+    100% {
+        top: -($item-count * 161 + px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes moveSlideshowDown {
+    0% {
+        top: -600px;
+        opacity: 1;
+    }
+
+    98% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes moveSlideshowDown {
+    0% {
+        top: -600px;
+        opacity: 1;
+    }
+
+    98% {
+        top: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.smallStar {
+    background-image: url(http://ukcdn.ar-cdn.com/global/spriteGlobal.svg?v=903) no-repeat;
+    width: 84px;
+    height: 15px;
+    overflow: hidden;
+
+    &.rating5 {
+        background-position: -655px -94px;
+    }
+
+    &.rating45 {
+        background-position: -311px -94px;
+    }
+
+    &.rating4 {
+        background-position: -672px -94px;
+    }
+
+    &.rating35 {
+        background-position: -328px -94px;
+    }
+
+    &.rating3 {
+        background-position: -689px -94px;
+    }
+
+    &.rating25 {
+        background-position: -345px -94px;
+    }
+
+    &.rating2 {
+        background-position: -706px -94px;
+    }
+
+    &.rating15 {
+        background-position: -362px -94px;
+    }
+
+    &.rating1 {
+        background-position: -723px -94px;
+    }
+
+    &.rating05 {
+        background-position: -379px -94px;
+    }
+
+    &.rating0 {
+        background-position: -740px -94px;
+    }
+}
+
+//   END TRENDING RECIPES
